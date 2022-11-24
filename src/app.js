@@ -4,32 +4,8 @@ const { json } = require("body-parser");
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
 
-const books = [
-  {
-    title: "The Awakening",
-    author: "Kate Chopin",
-  },
-  {
-    title: "City of Glass",
-    author: "Paul Auster",
-  },
-];
-
-const typeDefs = `
-  type Book {
-    title: String
-    author: String
-  }
-  type Query {
-    books: [Book]
-  }
-`;
-
-const resolvers = {
-  Query: {
-    books: () => books,
-  },
-};
+const typeDefs = require("./schema/index");
+const resolvers = require("./resolvers/index");
 
 const startExpress = async () => {
   const app = express();
