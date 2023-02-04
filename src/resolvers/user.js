@@ -6,12 +6,7 @@ module.exports = {
       return await user;
     },
     user: async (parent, { id }, { models }) => {
-      return await {
-        id: id,
-        username: "abc",
-        email: "abc@gmail.com",
-        role: "aa",
-      };
+      return await user.find((item) => item.id === Number(id));
     },
     me: async (parent, args, { models, me }) => {
       return await [];
