@@ -13,9 +13,9 @@ const startExpress = async () => {
   app.use(cors());
   app.use(json());
 
-  app.get("/", (req, res) => {
-    res.send("Express Server");
-  });
+  // app.get("/", (req, res) => {
+  //   res.send("Express Server");
+  // });
 
   const server = new ApolloServer({
     typeDefs,

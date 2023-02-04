@@ -3,10 +3,10 @@ module.exports = `
     token: String!
   }
   type User {
-    id: ID!
-    username: String!
-    email: String!
-    role: String
+    userId: ID!
+    id: Int!
+    title: String!
+    completed: Boolean!
   }
   extend type Query {
     users: [User!]

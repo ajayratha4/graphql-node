@@ -1,12 +1,17 @@
+const user = require("./const");
+
 module.exports = {
   Query: {
     users: async (parent, args, { models }) => {
-      return await [
-        { id: 123, username: "abc", email: "abc@gmail.com", role: "aa" },
-      ];
+      return await user;
     },
     user: async (parent, { id }, { models }) => {
-      return await [];
+      return await {
+        id: id,
+        username: "abc",
+        email: "abc@gmail.com",
+        role: "aa",
+      };
     },
     me: async (parent, args, { models, me }) => {
       return await [];
